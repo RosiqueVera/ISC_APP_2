@@ -11,7 +11,15 @@
     <fragment
         android:id="@+id/fragment"
         android:name="com.example.eva1_5_cambio_orientacion.MasterFragment"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1" />
+
+    <FrameLayout
+        android:id="@+id/frmLyDetail"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+    </FrameLayout>
 </LinearLayout>

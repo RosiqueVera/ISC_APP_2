@@ -1,6 +1,7 @@
 package com.example.eva1_5_cambio_orientacion;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 
 public class DetailActivity extends AppCompatActivity {
