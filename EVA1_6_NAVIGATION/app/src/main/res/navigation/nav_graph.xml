@@ -11,11 +11,21 @@
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
-            android:id="@+id/action_mainFragment_to_blueFragment"
-            app:destination="@id/blueFragment" />
-        <action
             android:id="@+id/action_mainFragment_to_redFragment"
-            app:destination="@id/redFragment" />
+            app:destination="@id/redFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            />
+        <action
+            android:id="@+id/action_mainFragment_to_blueFragment"
+
+            app:destination="@id/blueFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
     </fragment>
     <fragment
         android:id="@+id/blueFragment"

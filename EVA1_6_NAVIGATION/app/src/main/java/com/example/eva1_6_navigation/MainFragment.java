@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+
 public class MainFragment extends Fragment {
 
     NavController navController;
@@ -27,32 +28,29 @@ public class MainFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         navController = Navigation.findNavController(view);
         Button btnRed, btnBlue;
-        btnBlue = view.findViewById(R.id.btnBlue);
         btnRed = view.findViewById(R.id.btnRed);
-
-        btnBlue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_mainFragment_to_blueFragment);
-            }
-        });
+        btnBlue = view.findViewById(R.id.btnBlue);
 
         btnRed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Bundle bundle = new Bundle();
-                bundle.putString("PRUEBA","Mensaje...");
-                //navController.navigate(R.id.action_mainFragment_to_redFragment,bundle);
+                bundle.putString("PRUEBA", "Holass");
+              MainFragmentDirections.ActionMainFragmentToRedFragment action =
+                      MainFragmentDirections.actionMainFragmentToRedFragment();
+                action.setMiValor(99999);
+              navController.navigate(action);
+                //  navController.navigate(R.id.action_mainFragment_to_redFragment, bundle);
 
-                MainFragmentDirections.ActionMainFragmentToRedFragment action =
-                            MainFragmentDirections.actionMainFragmentToRedFragment();
-                //action.setMiValor(999999);
-                navController.navigate(action);
 
+            }
+        });
+        btnBlue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_mainFragment_to_blueFragment);
             }
         });
     }

@@ -11,13 +11,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+
 public class RedFragment extends Fragment {
-    String sCade ="";
-    int iVal=0;
+
+String sCade = "";
+int iVal = 0;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //sCade = getArguments().getString("PRUEBA");
+      //  sCade = getArguments().getString("PRUEBA");
         iVal = RedFragmentArgs.fromBundle(getArguments()).getMiValor();
     }
 
@@ -26,13 +28,14 @@ public class RedFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_red, container, false);
+
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        TextView textVwDatos = view.findViewById(R.id.txVwDatos);
-        //textVwDatos.setText(sCade);
-        textVwDatos.setText(iVal + "");
+        TextView txtVwDatos = view.findViewById(R.id.txtVwDatos);
+       // txtVwDatos.setText(sCade);
+        txtVwDatos.setText(iVal + "");
     }
 }
